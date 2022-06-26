@@ -12,7 +12,12 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="About" />
-      <p>Hi! I'm Kathy. I work at Nuance Communications (a Microsoft company) building, designing and innovating engagement experiences on our digital platform.</p>
+      <p>Hi! I'm Kathy. I work at Nuance Communications (a Microsoft company) building, designing and innovating engagement experiences on our digital platform. Previously I worked at a small app development company building full stack applications from the ground up.</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/kathryn-morris-0b8938176/">LinkedIn</a></li>
+        <li><a href="http://github.com/katymorris">Github</a></li>
+        <li><a href="mailto:katydmorris@gmail.com">Email Me</a> (katydmorris@gmail.com)</li>
+      </ul>
     </Layout>
   )
 }
