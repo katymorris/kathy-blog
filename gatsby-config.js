@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Kathy Codes`,
+    title: `I just work here.`,
     author: {
       name: `Kathy Morris`,
-      summary: `is a Software engineer working in innovation and developer relations.`,
+      summary: `is a Software Engineer working in innovation and developer relations.`,
     },
     description: `Kathy Morris Blog`,
     siteUrl: `https://kathyblog.gatsbyjs.io/`,

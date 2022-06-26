@@ -54,12 +54,22 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #005b99;
+  --color-primary: #3b9ddf;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+}
+
+@font-face {
+  font-family: RobotoMono;
+  src: url(./fonts/RobotoMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: SourceSansPro-Light;
+  src: url(./fonts/SourceSansPro-Light.ttf)
 }
 
 /* HTML elements */
@@ -255,6 +265,7 @@ a:focus {
 }
 
 .main-heading {
+  font-family: 'RobotoMono', monospace;
   font-size: var(--fontSize-7);
   margin: 0;
 }
@@ -269,6 +280,7 @@ a:focus {
 }
 
 .post-list-item h2 {
+  font-family: SourceSansPro-Light;
   font-size: var(--fontSize-4);
   color: var(--color-primary);
   margin-bottom: var(--spacing-2);
