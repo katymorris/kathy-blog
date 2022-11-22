@@ -3,7 +3,7 @@ module.exports = {
     title: `I just work here.`,
     author: {
       name: `Kathy Morris`,
-      summary: `is a Software Engineer working in innovation and developer relations.`,
+      summary: `is a Software Engineer working in innovation and product development.`,
     },
     description: `Kathy Morris Blog`,
     siteUrl: `https://kathyblog.gatsbyjs.io/`,
