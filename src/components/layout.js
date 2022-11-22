@@ -27,7 +27,8 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}
+        © Kathy Morris {new Date().getFullYear()}
+        <a href="https://www.flaticon.com/free-icons/hi" title="hi icons">favicon created by Freepik - Flaticon</a>
       </footer>
     </div>
   )
