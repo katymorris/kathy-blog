@@ -12,11 +12,11 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="About" />
-      <p>Hi! I'm Kathy. I work in the contact center space building, designing and innovating digital engagement experiences.</p>
+      <p>Hi! I'm Kathy. I build, design and innovate digital experiences.</p>
       <ul>
         <li><a href="https://www.linkedin.com/in/kathryn-morris-0b8938176/">LinkedIn</a></li>
         <li><a href="http://github.com/katymorris">Github</a></li>
-        <li><a href="mailto:katydmorris@gmail.com">Email Me</a> (katydmorris@gmail.com)</li>
+        <li><a href="mailto:katydmorris@gmail.com">Email Me</a></li>
       </ul>
     </Layout>
   )

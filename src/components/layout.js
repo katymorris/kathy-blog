@@ -28,7 +28,7 @@ const Layout = ({ location, title, children }) => {
       <main>{children}</main>
       <footer>
         © Kathy Morris {new Date().getFullYear()}
-        <a href="https://www.flaticon.com/free-icons/hi" title="hi icons">favicon created by Freepik - Flaticon</a>
+         <a href="https://www.flaticon.com/free-icons/hi" title="hi icons">favicon created by Freepik - Flaticon</a>
       </footer>
     </div>
   )
