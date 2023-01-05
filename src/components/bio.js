@@ -34,7 +34,7 @@ const Bio = () => {
     <div className="bio">
       {author?.name && (
         <p>
-          <strong>{author.name}</strong> {author?.summary || null} {' '}
+          <strong>{author.name}</strong> {author?.summary || null} Read more <a href="./about">Here.</a> {' '}
         </p>
       )}
     </div>

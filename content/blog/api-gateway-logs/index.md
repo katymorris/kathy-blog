@@ -1,7 +1,7 @@
 ---
-title: Logs for API Gateways in AWS
+title: Logging for API Gateways in AWS
 date: "2022-01-04T22:12:03.284Z"
-description: "Because I spent way too much time trying to figure this out."
+description: "Role creation for use in logging API Gateways."
 ---
 
 Working with AWS is new for me at the moment. Generally it's been pretty easy - a lot easier than Azure. But I'm definitely hitting quite a few knowledge blocks along the way. One thing that threw me off today was that, I was trying my first API call from the browser, trying to trigger my Lambda function, but it wasn't hitting it. My function logs were not showing any activity - so I needed to check the logs for the API Gateway. When I checked CloudWatch I noticed there was no log group for API Gateway, which seemed to be setup automatically for my Lambda functions on creation. So I poked around and this is the process that I figured out to make this happen:
@@ -42,6 +42,13 @@ Working with AWS is new for me at the moment. Generally it's been pretty easy - 
 
 Here, you can use the dropdown menu for "CloudWatch Logs" to choose the type of logs you want to see and other settings for those. 
 
+Under Access logging, you'll need to create a new logging group in CloudWatch where logs can be written. When this is done, insert the ARN from the log group in the "Access Log Destination ARN" field. 
+
+Under log format for access logging, you can choose which format logs will be outputted in (CLF, JSON, XML, CSV). Clicking the buttons for the formats will insert the default format for that type, and the format can be customized further if needed. 
+
 ![Pick Stage and Logs](./stage-pick-redacted.png)
 
-####Execution Logs vs Access Logs
+#### You're done!
+
+Going back to your CloudWatch tab, you should be able to click your log groups and view logging to the API Gateway now. Congrats!
+

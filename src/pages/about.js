@@ -12,7 +12,7 @@ const About = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="About" />
-      <p>Hi! I'm Kathy. I build, design and innovate digital experiences.</p>
+      <p>Hi! I'm Kathy. I build and design digital experiences.</p>
       <p>In my sparetime I'm a VR enthusiest.</p>
       <ul>
         <li><a href="https://www.linkedin.com/in/kathryn-morris-0b8938176/">LinkedIn</a></li>
