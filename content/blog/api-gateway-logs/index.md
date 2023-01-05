@@ -4,7 +4,7 @@ date: "2022-01-04T22:12:03.284Z"
 description: "Because I spent way too much time trying to figure this out."
 ---
 
-Working with AWS is new for me at the moment. Generally it's been pretty easy - a lot easier than Azure. But I'm definitely hitting quite a few knowledge blocks along the way. One thing that threw me off today was that, I was trying my first API call from the browser, trying to trigger my Lambda function, but it wasn't hitting it. My function logs were not showing any activity - so I needed to check the logs for the API Gateway. When I checked CloudWatch I noticed there was no log group for API Gateway, which seemed to be setup automatically for my Lambda functions. So I poked around and this is the process that I figured out to make this happen:
+Working with AWS is new for me at the moment. Generally it's been pretty easy - a lot easier than Azure. But I'm definitely hitting quite a few knowledge blocks along the way. One thing that threw me off today was that, I was trying my first API call from the browser, trying to trigger my Lambda function, but it wasn't hitting it. My function logs were not showing any activity - so I needed to check the logs for the API Gateway. When I checked CloudWatch I noticed there was no log group for API Gateway, which seemed to be setup automatically for my Lambda functions on creation. So I poked around and this is the process that I figured out to make this happen:
 
 1. Navigate to your API list in API Gateway. Choose the API you want to have logs outputted.
 
@@ -36,10 +36,12 @@ Working with AWS is new for me at the moment. Generally it's been pretty easy - 
 
 8. Return to your API Gateway tab and paste the ARN into the blank input field. Click save. If you received no indicated that it worked, it worked (thanks AWS). If not, you should get an error. 
 
-![Add Role in Gateway](./role-gateway-filled-redacted.png)
+![Add Role in Gateway](./api-gateway-filled-redacted.png)
 
 9. Now that you have your roles done, the next thing to do is to enable logs in your env. Go to your navigation panel on the left and click on "Stages". This will reveal the different environments you have set up for your API. Click on the environment you want to see logs for and a settings page will show. Choose the "Logs/Tracing" tab in the settings page and you will see the the configurations for enabling logging.
 
-Here, you can use the dropdown menu for "CloudWatch Logs" to choose the type of logs you want to see. 
+Here, you can use the dropdown menu for "CloudWatch Logs" to choose the type of logs you want to see and other settings for those. 
 
 ![Pick Stage and Logs](./stage-pick-redacted.png)
+
+####Execution Logs vs Access Logs
