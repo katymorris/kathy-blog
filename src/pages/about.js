@@ -16,7 +16,7 @@ const About = ({ data, location }) => {
       <p>In my sparetime I'm a VR enthusiest.</p>
       <ul>
         <li><a href="https://www.linkedin.com/in/kathryn-morris-0b8938176/">LinkedIn</a></li>
-        <li><a href="http://github.com/katymorris">Github</a></li>
+        {/* <li><a href="http://github.com/katymorris">Github</a></li> */}
         <li><a href="mailto:katydmorris@gmail.com">Email Me</a></li>
       </ul>
     </Layout>
