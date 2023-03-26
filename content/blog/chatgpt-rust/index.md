@@ -29,7 +29,7 @@ I asked ChatGPT about the error and it told me that the "main" function cannot b
 I didn't know what tokio runtime was, so I asked and it seemed to give a good definition: 
 ![Tokio Definition](./5.png)
 
-Bummer it didn't see the error when originally outputting, but good for learning I guess. I suppose it's the same mistakes I'd be making myself. 
+Bummer it didn't see the error when originally outputting, but good for learning I guess. I suppose it's the same mistakes I'd be making myself. But in an AI, I'd want it to be more accurate if I wasn't a newbie Rust developer.
 
 I input the new code and tried to run it:
 ![Tokio Module Missing](./6.png)
@@ -74,12 +74,12 @@ For the mismatch error it's suggesting I change the return type to a more genera
 Original:  `Result<(), std::io::Error>`
 Newly Suggested:  `Result<(), Box<dyn std::error::Error>>`
 
-In my head I'm wondering if `Box<dyn>` might be equivilent to "any" in TypeScript. You generally want to avoid using "any" if at all possible, so I'm questioning whether ChatGPT is correct here. I asked it to explain `Box<dyn>`:
-
+In my head I'm wondering if `Box<dyn>` might be equivilent to "any" in TypeScript. You generally want to avoid using general types so errors can be caught more accurately, so I'm questioning whether ChatGPT is correct here. I asked it to explain `Box<dyn>`:
 ![Dyn Error Exp](./17.png)
-I'm still questioning the accuracy of ChatGPT using `Box<dyn>` in this situation. I decided it's time to venture outward to Google at this point out of curiousity. I ended up at the Rust documentation:
 
+I'm still questioning the accuracy of ChatGPT using `Box<dyn>` in this situation. I decided it's time to venture outward to Google at this point out of curiousity. I ended up at the Rust documentation:
 ![Documentation Dyn](./18.png)
+
 I found this answer much better than what ChatGPT gave me. Then I started looking for an example of actix HttpServer to compare what ChatGPT gave me to it. I went to the documentation again and found this snippet which doesn't use `Box<dyn>`:
 
 ![actix Documentation](./19.png)
@@ -88,7 +88,7 @@ I read it over, copied it over and replaced the ChatGPT snippet I was given, cha
 ![Server Running](./20.png)
 ![Postman](./21.png)
 
-I jumped forward a bit here and didn't even try ChatGPT's suggestion of using `Box<dyn>`, so I figured I'd try it to see if it would have worked in the first place, and no - it didn't:
+I admit that I jumped forward a bit here and didn't follow my original purpose to use ChatGPT as much as possible for solutions. I didn't even try ChatGPT's suggestion of using `Box<dyn>`, so I figured I'd try it to see if it would have worked in the first place, and no - it didn't:
 ![Question operator Error](./22.png)
 
 At this point I've finished my coffee and breakfast and want to move on with my day, so I decided to not continue trying to get ChatGPT to give me working code. I've gone through 2 phases of a small application build and it was an interesting process.
