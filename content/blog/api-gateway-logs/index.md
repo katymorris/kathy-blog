@@ -1,6 +1,6 @@
 ---
 title: Logging for API Gateways in AWS
-date: "2022-01-04T22:12:03.284Z"
+date: "2023-01-04T22:12:03.284Z"
 description: "Role creation for use in logging API Gateways."
 ---
 
