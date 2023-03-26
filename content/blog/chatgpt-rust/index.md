@@ -75,18 +75,18 @@ It's saying the warning isn't a big deal, which it's right - it's not. But best 
 
 For the mismatch error it's suggesting I change the return type to a more general type rather than using a specific type. The difference would be these:
 
-Original:  Result<(), std::io::Error>
-Newly Suggested:  Result<(), Box<dyn std::error::Error>>
+Original:  `Result<(), std::io::Error>`
+Newly Suggested:  `Result<(), Box<dyn std::error::Error>>`
 
-In my head I'm wondering if Box<dyn> might be equivilent to <any> in TypeScript. You generally want to avoid using <any> if at all possible, so I'm questioning whether ChatGPT is correct here. I asked it to explain <dyn>:
+In my head I'm wondering if `Box<dyn>` might be equivilent to "any" in TypeScript. You generally want to avoid using "any" if at all possible, so I'm questioning whether ChatGPT is correct here. I asked it to explain `Box<dyn>`:
 
 ![Dyn Error Exp](./17.png)
 
-I'm still questioning the accuracy of ChatGPT using Box<dyn> in this situation. I decided it's time to venture outward to Google at this point out of curiousity. I ended up at the Rust documentation:
+I'm still questioning the accuracy of ChatGPT using `Box<dyn>` in this situation. I decided it's time to venture outward to Google at this point out of curiousity. I ended up at the Rust documentation:
 
 ![Documentation Dyn](./18.png)
 
-I found this answer much better than what ChatGPT gave me. Then I started looking for an example of actix HttpServer to compare what ChatGPT gave me to it. I went to the documentation again and found this snippet which doesn't use Box<dyn>:
+I found this answer much better than what ChatGPT gave me. Then I started looking for an example of actix HttpServer to compare what ChatGPT gave me to it. I went to the documentation again and found this snippet which doesn't use `Box<dyn>`:
 
 ![actix Documentation](./19.png)
 
@@ -95,7 +95,7 @@ I read it over, copied it over and replaced the ChatGPT snippet I was given, cha
 ![Server Running](./20.png)
 ![Postman](./21.png)
 
-I jumped forward a bit here and didn't even try ChatGPT's suggestion of using Box<dyn>, so I figured I'd try it to see if it would have worked in the first place, and no - it didn't:
+I jumped forward a bit here and didn't even try ChatGPT's suggestion of using `Box<dyn>`, so I figured I'd try it to see if it would have worked in the first place, and no - it didn't:
 
 ![Question operator Error](./22.png)
 
