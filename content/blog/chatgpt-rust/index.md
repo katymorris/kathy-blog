@@ -41,11 +41,9 @@ Great. I added the code to Cargo.toml and ran cargo build, it built with no erro
 ![First App Built](./9.png)
 
 Nice! Got my first Rust app up and running. A few errors along the way, but not bad. But I wanted to push ChatGPT a little bit further, so I wanted to see if it could help me make this into an endpoint I can hit locally:
-
 ![Async Error](./10.png)
 
 Looks simple enough... but I knew better this time and asked it if I need to install any new modules:
-
 ![Add Modules](./11.png)
 
 Installed what it said, ran cargo build and tried it out.
@@ -62,13 +60,11 @@ Then I wondered why it wasn't using tokio anymore, so I asked it:
 That reasoning makes sense. Tokio's purpose isn't for building web servers, but actix-web is actually built on top of tokio. I was happy with the explanation it gave me. 
 
 I tried the new code, and behold:
-
 ![Warning and Error](./15.png)
 
 A warning and an error. Warning is an easy fix, remove the "web" import. It makes some sense that Chatgpt didn't catch that would cause an error, in it's data it probably ranks that import snippet as highly used so it gave it to me. It didn't check it against the other code in the script it gave me to see if "web" is actually used. Small change though, not a big deal.
 
 I ran the warning and error through ChatGPT and it gave me this response:
-
 ![Warning and Error GPT Response](./16.png)
 
 It's saying the warning isn't a big deal, which it's right - it's not. But best practice would be to remove the 'web' module anyway.
@@ -81,22 +77,18 @@ Newly Suggested:  `Result<(), Box<dyn std::error::Error>>`
 In my head I'm wondering if `Box<dyn>` might be equivilent to "any" in TypeScript. You generally want to avoid using "any" if at all possible, so I'm questioning whether ChatGPT is correct here. I asked it to explain `Box<dyn>`:
 
 ![Dyn Error Exp](./17.png)
-
 I'm still questioning the accuracy of ChatGPT using `Box<dyn>` in this situation. I decided it's time to venture outward to Google at this point out of curiousity. I ended up at the Rust documentation:
 
 ![Documentation Dyn](./18.png)
-
 I found this answer much better than what ChatGPT gave me. Then I started looking for an example of actix HttpServer to compare what ChatGPT gave me to it. I went to the documentation again and found this snippet which doesn't use `Box<dyn>`:
 
 ![actix Documentation](./19.png)
-
 I read it over, copied it over and replaced the ChatGPT snippet I was given, changed it to use my get_weather function and it worked!
 
 ![Server Running](./20.png)
 ![Postman](./21.png)
 
 I jumped forward a bit here and didn't even try ChatGPT's suggestion of using `Box<dyn>`, so I figured I'd try it to see if it would have worked in the first place, and no - it didn't:
-
 ![Question operator Error](./22.png)
 
 At this point I've finished my coffee and breakfast and want to move on with my day, so I decided to not continue trying to get ChatGPT to give me working code. I've gone through 2 phases of a small application build and it was an interesting process.
