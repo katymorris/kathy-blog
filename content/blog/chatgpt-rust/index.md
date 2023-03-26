@@ -15,7 +15,7 @@ I decided to test this and see if ChatGPT can teach me something I'm 100% unfami
 It was a bit early in the day when I started so I decided to push ChatGPT a bit to help me figure out what to build.
 ![What Can I Do with Rust](./1.png)
 
-Then I asked it for a list of project for newbies - it gave me the standard stuff like a calculator, password generator, and a weather app.So I asked it to help me build a weather app since it would include an API call - might be a bit more interesting. 
+Then I asked it for a list of project for newbies - it gave me the standard stuff like a calculator, password generator, and a weather app. So I asked it to help me build a weather app since it would include an API call - might be a bit more interesting. 
 ![What Can I Build](./2.png)
 
 I'm not sure what I was expecting here, maybe not the entire code - but I guess it makes sense it just gave me all of the code for a starter project. It gave me what it thinks is the code and process to build the entire application. 
